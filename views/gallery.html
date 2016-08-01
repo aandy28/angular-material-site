@@ -1,32 +1,10 @@
-<!-- <md-content>
-    <div class="app-content">
+<md-content>
+    <div class="app-content gallery">
         <div layout="row" layout-sm="column" layout-wrap>
-            <md-card ng-repeat="picture in results.photoset.photo" flex-gt-sm="25" flex="100">
-                <img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_m.jpg" class="md-media-lg card-media">
-                <h3>{{picture.title._content}}</h3>
-                <span>https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_m.jpg</span>
+            <md-card ng-repeat="s in allslides track by $index">
+                <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
+                
             </md-card>
         </div>
     </div>
-</md-content> -->
-
-<!-- <div ng-photoswipe
-     slides="slides"
-     slide-selector=".my-awesome-thumbnail"
-     open="isOpen"
-     on-close="onGalleryClose()"
-     
-     options="opts"></div> -->
-
-     <h1> {{ vm.title }} </h1>
-
-        <button ng-click="vm.showGallery()"> Show Gallery (external btn) </button>
-
-        <ul class="slide-list">
-           <li ng-repeat="s in slides track by $index" ng-click="vm.showGallery($index)">
-               <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
-           </li>
-        </ul>
-
-        <div ng-photoswipe slides="slides" open="vm.open" slide-selector=".slide-list > li > img"
-            on-close="vm.closeGallery()" options="vm.opts"></div>
+</md-content> 

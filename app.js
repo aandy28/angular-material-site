@@ -1,4 +1,4 @@
-var app = angular.module('flickrApp', ['ui.router', 'ngMaterial', 'ngMessages', 'uiGmapgoogle-maps','ngPhotoswipe']);
+var app = angular.module('flickrApp', ['ui.router', 'ngMaterial', 'ngMessages', 'uiGmapgoogle-maps']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 

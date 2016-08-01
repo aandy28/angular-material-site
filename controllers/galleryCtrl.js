@@ -1,10 +1,16 @@
 'use strict';
 app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrService) {
     $scope.results = [];
-    $scope.slides = [];
+    $scope.allslides = [];
 
     $scope.photosetid = $stateParams.photosetid;
     var vm = this;
+    vm.title = 'ngPhotoswipe';
+
+    vm.opts = {
+        index: 0,
+        history:false
+    };
 
     // FlickrService.getAlbumPhotos($scope.photosetid).then(function(data){
     //     $scope.slides = data;
@@ -24,6 +30,7 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
         }
     }).success(function(data) {
         $scope.results = data;
+
         for (var i = $scope.results.photoset.photo.length - 1; i >= 0; i--) {
 
 
@@ -34,36 +41,30 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
                 pid: $scope.results.photoset.photo[i].id
             };
 
-            $scope.slides.push(slide);
+            $scope.allslides.push(slide);
 
 
 
-            vm.title = 'ngPhotoswipe';
 
-            vm.opts = {
-                index: 0
-            };
-
-            console.log(vm);
-
-            vm.showGallery = function(i) {
-                console.log("open gallery");
-                if (angular.isDefined(i)) {
-                    vm.opts.index = i;
-                }
-                vm.open = true;
-            };
-
-            vm.closeGallery = function() {
-                console.log("close gallery");
-                vm.open = false;
-            };
         }
+        // vm.slides = $scope.slides;
+        console.log(vm);
 
     }).error(function(error) {
         console.error(error);
 
     });
+    vm.showGallery = function(i) {
+        console.log("open gallery");
+        if (angular.isDefined(i)) {
+            vm.opts.index = i;
+        }
+        vm.open = true;
+    };
 
-    
+    vm.closeGallery = function() {
+        console.log("close gallery");
+        vm.open = false;
+    };
+    vm.slides = $scope.allslides;
 });
