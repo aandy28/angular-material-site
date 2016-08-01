@@ -1,48 +1,69 @@
 'use strict';
 app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrService) {
-	$scope.results = [];
+    $scope.results = [];
     $scope.slides = [];
 
-	$scope.photosetid = $stateParams.photosetid;
-	console.log($scope.photosetid);
-    
-    FlickrService.getAlbumPhotos($scope.photosetid).then(function(data){
-        $scope.results = data;
+    $scope.photosetid = $stateParams.photosetid;
+    var vm = this;
 
-        for (var i = $scope.results.length - 1; i >= 0; i--) {
-            $scope.results[i]
+    // FlickrService.getAlbumPhotos($scope.photosetid).then(function(data){
+    //     $scope.slides = data;
+
+    // });
+
+    $http({
+        method: 'GET',
+        url: 'https://api.flickr.com/services/rest',
+        params: {
+            method: 'flickr.photosets.getPhotos',
+            api_key: '5f1fc83583ecf2d1ba87d603691d3088',
+            user_id: '142517182@N04',
+            photoset_id: $scope.photosetid,
+            format: 'json',
+            nojsoncallback: 1
+        }
+    }).success(function(data) {
+        $scope.results = data;
+        for (var i = $scope.results.photoset.photo.length - 1; i >= 0; i--) {
+
 
             var slide = {
-                src: 'https://farm'+$scope.results[i].farm+'.static.flickr.com/'+$scope.results[i].server+'/'+$scope.results[i].primary+'_'+$scope.results[i].secret+'_m.jpg',
-                w:500,
-                h:400,
-                pid: $scope.results[i].title._content
+                src: 'https://farm' + $scope.results.photoset.photo[i].farm + '.static.flickr.com/' + $scope.results.photoset.photo[i].server + '/' + $scope.results.photoset.photo[i].id + '_' + $scope.results.photoset.photo[i].secret + '_b.jpg',
+                w: 500,
+                h: 400,
+                pid: $scope.results.photoset.photo[i].id
             };
 
             $scope.slides.push(slide);
+
+
+
+            vm.title = 'ngPhotoswipe';
+
+            vm.opts = {
+                index: 0
+            };
+
+            console.log(vm);
+
+            vm.showGallery = function(i) {
+                console.log("open gallery");
+                if (angular.isDefined(i)) {
+                    vm.opts.index = i;
+                }
+                vm.open = true;
+            };
+
+            vm.closeGallery = function() {
+                console.log("close gallery");
+                vm.open = false;
+            };
         }
+
+    }).error(function(error) {
+        console.error(error);
+
     });
 
-    // for (var i = $scope.results.photosets.photo.length - 1; i >= 0; i--) {
-    //     console.log($scope.results.photosets.photo[i]);
-    // }
-        // $http({
-        //     method: 'GET',
-        //     url: 'https://api.flickr.com/services/rest',
-        //     params: {
-        //         method: 'flickr.photosets.getPhotos',
-        //         api_key: '5f1fc83583ecf2d1ba87d603691d3088',
-        //         user_id: '142517182@N04',
-        //         photoset_id: $scope.photosetid,
-        //         format: 'json',
-        //         nojsoncallback: 1
-        //     }
-        // }).success(function(data) {
-        //     $scope.results = data;
-            
-
-        // }).error(function(error) {
-        //     console.error(error);
-           
-        // });
-    });
+    
+});

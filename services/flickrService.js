@@ -76,22 +76,35 @@ app.factory('FlickrService', function($http, $sce) {
                 });
             })(),
 
-        getAlbumPhotos: (function(albumId, response) {
-            return $http({
-                method: 'GET',
-                url: url,
-                params: {
-                    method: 'flickr.photosets.getPhotos',
-                    api_key: apiKey,
-                    user_id: userId,
-                    photoset_id: albumId,
-                    format: 'json',
-                    nojsoncallback: 1
-                }
-            }).then(function(response) {
-                return response.data;
-            });
-        })(),
+        // getAlbumPhotos: (function(albumId, response) {
+        //     var slides = [];
+        //     return $http({
+        //         method: 'GET',
+        //         url: url,
+        //         params: {
+        //             method: 'flickr.photosets.getPhotos',
+        //             api_key: apiKey,
+        //             user_id: userId,
+        //             photoset_id: albumId,
+        //             format: 'json',
+        //             nojsoncallback: 1
+        //         }
+        //     }).then(function(response) {
+        //         // console.log(response);
+        //         for (var i = response.data.photoset.photo.length - 1; i >= 0; i--) {
+
+        //             var slide = {
+        //                 src: 'https://farm'+response.data.photoset.photo[i].farm+'.static.flickr.com/'+response.data.photoset.photo[i].server+'/'+response.data.photoset.photo[i].id+'_'+response.data.photoset.photo[i].secret+'_b.jpg',
+        //                 w:500,
+        //                 h:400,
+        //                 pid: response.data.photoset.photo[i].id
+        //             };
+
+        //             slides.push(slide);
+        //         }
+        //         return slides;
+        //     });
+        // })(),
 
         getAlbumLocation: (function(response) {
             var markers = [];

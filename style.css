@@ -29,25 +29,17 @@ md-toolbar:not(.md-menu-toolbar) {
     border: 2px solid #434443;
 }
 
-.md-title
-{
+.md-title {
     text-align: center;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
 
-a:hover
-{
-    
-}
+a:hover {}
 
-a:visited
-{
-    
-}
+a:visited {}
 
 @media screen and (min-width: 600px) {
     md-sidenav {
@@ -75,10 +67,9 @@ md-content {
     overflow: hidden;
 }
 
-.angular-google-map-container
-{
+.angular-google-map-container {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -98,7 +89,9 @@ img {
     display: inline-block;
 }
 
+
 /* Mallki */
+
 .link--mallki {
     font-weight: 800;
     color: #434443;
@@ -122,17 +115,17 @@ img {
     position: absolute;
     left: 0;
     top: 50%;
-    -webkit-transform: translate3d(-100%,0,0);
-    transform: translate3d(-100%,0,0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     -webkit-transition: -webkit-transform 0.4s;
     transition: transform 0.4s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .link--mallki:hover::before {
-    -webkit-transform: translate3d(100%,0,0);
-    transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
 }
 
 .link--mallki span {
@@ -161,21 +154,45 @@ img {
 
 .link--mallki span:first-child::before {
     top: 0;
-    -webkit-transform: translate3d(0,100%,0);
-    transform: translate3d(0,100%,0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 .link--mallki span:nth-child(2)::before {
     bottom: 0;
-    -webkit-transform: translate3d(0,-100%,0);
-    transform: translate3d(0,-100%,0);
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
 }
 
 .link--mallki:hover span::before {
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-    -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
-    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+button {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+
+.slide-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slide-list > li {
+    display: inline;
+}
+
+.slide-list > li:hover {
+    cursor: pointer;
+}
+
+.slide-list > li > img {
+    width: 100px;
+    height: 100px;
 }
