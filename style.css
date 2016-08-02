@@ -103,7 +103,8 @@ md-card img
 }
 
 md-card img {
-    max-height: 314px !important;
+    max-height: 300px !important;
+    min-height: 300px;
 }
 
 .home md-card
