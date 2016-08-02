@@ -5,8 +5,6 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
     $scope.photosetid = $stateParams.photosetid;
 
     // FlickrService.getAlbumPhotos($scope.photosetid).then(function(data){
-    //     $scope.slides = data;
-
     //     for (var i = data.photoset.photo.length - 1; i >= 0; i--) {
 
     //         var slide = {
