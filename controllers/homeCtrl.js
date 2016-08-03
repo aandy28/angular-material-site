@@ -1,10 +1,9 @@
 (function() {
     'use strict';
 
-    app.controller('HomeCtrl', ['$scope', '$http', '$mdSidenav', '$state', 'FlickrService', function($scope, $http, $mdSidenav, $state, FlickrService) {
+    app.controller('HomeCtrl', ['$scope', '$http', '$mdSidenav', '$state', 'FlickrService', 'myutils', function($scope, $http, $mdSidenav, $state, FlickrService, myutils) {
         $scope.results = [];
         $scope.userIcon = "";
-
         $scope.menuItems = [
             { name: 'about', path: 'about' },
             { name: 'contact', path: 'contact' },

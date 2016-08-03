@@ -1,5 +1,5 @@
 'use strict';
-app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrService) {
+app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrService, myutils) {
     $scope.results = [];
     $scope.allslides = [];
     $scope.photosetid = $stateParams.photosetid;
@@ -18,7 +18,8 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
     //     }
 
     // });
-
+    $scope.data_received = false;
+    myutils.showWait();
     $http({
         method: 'GET',
         url: 'https://api.flickr.com/services/rest',
@@ -45,6 +46,7 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
 
             $scope.allslides.push(slide);
         }
+        myutils.hideWait();
 
     }).error(function(error) {
         console.error(error);
