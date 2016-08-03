@@ -7,12 +7,13 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog){
 		    elem.on('click',function(){		
 		    	var image = attrs.src;
 		    	var title = attrs.mdLightboxTitle;
-		    	showLightboxModal(image, title);
+		    	var index = attrs.index;
+		    	showLightboxModal(image, title, index);
 				
 			});
 
 			//Lightbox Modal
-		    function showLightboxModal(image, title) {
+		    function showLightboxModal(image, title, index) {
 		        var confirm = $mdDialog.confirm({
 		            templateUrl: 'views/lightbox.html',
 		            clickOutsideToClose: true,
@@ -24,10 +25,23 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog){
 		        function lightboxController($scope, $mdDialog) {
 		        	$scope.image = image;
 		        	$scope.title = title;
+		        	$scope.index = index;
+
+		        	console.log($scope.index);
 
 		            $scope.cancel = function() {
 		                $mdDialog.cancel();
 		            };
+
+		            $scope.nextImage = function(index)
+		            {
+
+		            }
+
+		            $scope.prevImage = function(index)
+		            {
+		            	
+		            }
 
 		        }
 
