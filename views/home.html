@@ -1,13 +1,13 @@
 <md-content>
     <div class="app-content home">
         <div layout="row" layout-sm="column" layout-wrap>
-            <md-card ng-repeat="picture in results.photosets.photoset | orderBy:'-date_create'" >
+            <md-card ng-repeat="picture in results.photosets.photoset | orderBy:'date_update'" >
                 <a ui-sref="gallery({ photosetid: picture.id })"><img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_b.jpg" class="md-media-lg card-media">
                 </a>
-               <!--  <h3 class="md-title">
+               <h3 class="md-title">
                 <a class="link link--mallki" ui-sref="gallery({ photosetid: picture.id })">{{picture.title._content}}<span data-letters="{{picture.title._content}}"></span><span data-letters="{{picture.title._content}}"></span></a>
-                	
-                </h3> -->
+                    
+                </h3>
             </md-card>
         </div>
     </div>

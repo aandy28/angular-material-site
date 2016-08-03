@@ -31,7 +31,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     // use the HTML5 History API
-        $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
         // google api key AIzaSyAQ9IW7_K5YkfRX7FEqBi_qoSRbzFLP-Rg
 });

@@ -11,6 +11,7 @@ app.factory('FlickrService', function($http, $sce) {
                     method: 'flickr.photosets.getList',
                     api_key: apiKey,
                     user_id: userId,
+                    extras: 'date_upload',
                     format: 'json',
                     nojsoncallback: 1
                 }
