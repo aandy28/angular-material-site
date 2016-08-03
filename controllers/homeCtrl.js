@@ -21,8 +21,7 @@
         };
 
         $scope.toggleLeft = function() {
-            $mdSidenav('left')
-                .toggle();
+            $mdSidenav('left').toggle();
         }
 
         $scope.menuIcon = 'menu';

@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sidewayz Always Media</title>
     <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
-<!--     <link rel="stylesheet" href="bower_components/photoswipe/dist/photoswipe.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--     <link rel="stylesheet" href="bower_components/photoswipe/dist/photoswipe.css">
     <link rel="stylesheet" href="bower_components/photoswipe/dist/default-skin/default-skin.css"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
@@ -25,16 +26,16 @@
         https://github.com/m00s/angular-photoswipe
     </md-toolbar> -->
     <md-toolbar hide-gt-md>
-        <div class="md-toolbar-tools">
+        <div class="md-toolbar-tools nav-link">
             <md-button ng-click="openLeftMenu()">
-                Open Left Menu
+                <i class="material-icons">reorder</i>
             </md-button>
         </div>
     </md-toolbar>
     <div layout="row">
         <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')">
-            <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
-                <ng-md-icon ng-click="menuToggle()" hide-gt-sm> close </ng-md-icon>
+            <md-button class="md-icon-button right" hide-gt-md aria-label="Show Menu">
+                <md-icon md-font-library="material-icons" ng-click="menuToggle()" aria-label="Close" class="icon-static">close</md-icon>
             </md-button>
             <div class="header">
                 <span flex></span>
@@ -64,10 +65,9 @@
     <script src="bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
     <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
     <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
-<!--     <script src="bower_components/photoswipe/dist/photoswipe.min.js"></script>
+    <!--     <script src="bower_components/photoswipe/dist/photoswipe.min.js"></script>
     <script src="bower_components/photoswipe/dist/photoswipe-ui-default.min.js"></script>
     <script src="bower_components/ng-photoswipe/angular-photoswipe.min.js"></script> -->
-    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ9IW7_K5YkfRX7FEqBi_qoSRbzFLP-Rg" async defer></script>
     <script src="app.js" type="text/javascript"></script>
     <!-- Load services -->
@@ -78,6 +78,8 @@
     <script src="controllers/aboutCtrl.js"></script>
     <script src="controllers/contactCtrl.js"></script>
     <script src="controllers/photoLocationsCtrl.js"></script>
+    <!-- Load directives -->
+    <script src="directives/mdLightbox.js"></script>
 </body>
 
 </html>

@@ -12,6 +12,25 @@ md-input-container.long > input {
 
 .header {
     margin: 0 auto;
+    text-align: center;
+    clear: both;
+}
+
+.md-button.md-icon-button
+{
+    float:right;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar) .md-button:not(.md-raised), md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised)
+{
+    color:#434443;
+    font-size:22px;
+}
+
+.nav-link .material-icons
+{
+    font-size:50px;
+    margin-top: 16px;
 }
 
 md-card {
@@ -40,6 +59,11 @@ a {
 a:hover {}
 
 a:visited {}
+
+md-sidenav
+{
+   background-color: #d4e6e6; 
+}
 
 @media screen and (min-width: 600px) {
     md-sidenav {
@@ -82,16 +106,32 @@ img {
 
 md-card
 {
-    width: calc((100vw - 441px) / 4);
-    height: calc(((100vw - 640px) / 5.33 ) + 60px);
+    width: 100%;
+    height: auto;
     padding:0;
-    margin: 10px 0 10px 20px;
+    margin: 10px 20px 10px 20px;
 }
 
 md-card:nth-child(4n-7)
 {
     
-    width: calc(((100vw - 405px) / 2) + 20px);
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    md-card
+    {
+        width: calc((100vw - 441px) / 4);
+        height: calc(((100vw - 640px) / 5.33 ) + 60px);
+        padding:0;
+        margin: 10px 0 10px 20px;
+    }
+
+    md-card:nth-child(4n-7)
+    {
+        
+        width: calc(((100vw - 405px) / 2) + 20px);
+    }
 }
 
 md-card img
@@ -115,6 +155,26 @@ md-card img {
 .home md-card a
 {
     margin-top: auto;
+}
+
+.lightbox
+{
+    background-color:transparent;
+    box-shadow: none;
+}
+
+.lightbox md-toolbar.md-default-theme:not(.md-menu-toolbar), .lightbox md-toolbar:not(.md-menu-toolbar)
+{
+    background-color:transparent;
+}
+
+md-backdrop.md-opaque {
+    opacity: .88;
+}
+
+.gallery img:hover
+{
+    cursor: pointer;
 }
 
 .link {
