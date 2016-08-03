@@ -286,8 +286,10 @@ md-tabs[md-align-tabs="bottom"] md-tabs-wrapper {
     background: rgba(33,33,33,0.5);
 }
 
-md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
-    min-height: 900px;
+@media screen and (min-width: 769px) {
+    md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+        min-height: 900px;
+    }
 }
 
 md-tabs img
