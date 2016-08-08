@@ -38,10 +38,9 @@ app.controller('GalleryCtrl', function($scope, $http, $stateParams, FlickrServic
 
 
             var slide = {
-                src: 'https://farm' + $scope.results.photoset.photo[i].farm + '.static.flickr.com/' + $scope.results.photoset.photo[i].server + '/' + $scope.results.photoset.photo[i].id + '_' + $scope.results.photoset.photo[i].secret + '_b.jpg',
-                w: 500,
-                h: 400,
-                pid: $scope.results.photoset.photo[i].id
+                src: 'https://farm' + $scope.results.photoset.photo[i].farm + '.static.flickr.com/' + $scope.results.photoset.photo[i].server + '/' + $scope.results.photoset.photo[i].id + '_' + $scope.results.photoset.photo[i].secret + '_h.jpg',
+                pid: $scope.results.photoset.photo[i].id,
+                thumb: 'https://farm' + $scope.results.photoset.photo[i].farm + '.static.flickr.com/' + $scope.results.photoset.photo[i].server + '/' + $scope.results.photoset.photo[i].id + '_' + $scope.results.photoset.photo[i].secret + '_s.jpg'
             };
 
             $scope.allslides.push(slide);
