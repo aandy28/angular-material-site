@@ -41,7 +41,7 @@
 
         FlickrService.getAlbums.then(function(data){
             $scope.results = data;
-            console.log(data);
+            //console.log(data);
         });
 
         FlickrService.getUserIcon.then(function(data){

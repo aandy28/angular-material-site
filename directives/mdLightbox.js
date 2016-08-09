@@ -27,7 +27,7 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog){
 		        	$scope.title = title;
 		        	$scope.index = index;
 
-		        	console.log($scope.index);
+		        	//console.log($scope.index);
 
 		            $scope.cancel = function() {
 		                $mdDialog.cancel();

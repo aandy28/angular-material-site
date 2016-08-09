@@ -1,6 +1,6 @@
-<md-content>
-    <div class="app-content home">
-        <div layout="row" layout-sm="column" layout-wrap>
+<!-- <md-content>
+    <div class="app-content home"> -->
+<!-- <div layout="row" layout-sm="column" layout-wrap>
             <md-card ng-repeat="picture in results.photosets.photoset | orderBy:'date_update'" >
                 <a ui-sref="gallery({ photosetid: picture.id })"><img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg" class="md-media-lg card-media">
                 </a>
@@ -9,6 +9,24 @@
                     
                 </h3>
             </md-card>
-        </div>
-    </div>
+        </div> -->
+<md-content class="home">
+    <md-tabs md-border-bottom md-align-tabs="bottom" md-dynamic-height="false" flex layout-fill>
+        <md-tab ng-repeat="picture in results.photosets.photoset | orderBy:'date_update' track by $index" label="{{$index}}" flex  layout-fill>
+            <md-content layout="row" layout-align="space-around stretch" flex layout-fill>
+                <div flex class="homeCenterContent">
+                    <h3 class="md-title">
+                <a class="link link--mallki" ui-sref="gallery({ photosetid: picture.id })">{{picture.title._content}}<span data-letters="{{picture.title._content}}"></span><span data-letters="{{picture.title._content}}"></span></a>
+                    
+                </h3>
+                </div>
+                <div flex class="homeCenterContent">
+                    <a ui-sref="gallery({ photosetid: picture.id })" class="pic" style="background-image:url(https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg);"><!-- <img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg" class="md-media-lg card-media"> -->
+                    </a>
+                </div>
+            </md-content>
+        </md-tab>
+    </md-tabs>
 </md-content>
+<!-- </div>
+</md-content> -->

@@ -10,8 +10,8 @@ app.controller('PhotoLocationsCtrl', function($scope, $http, $stateParams, $wind
      
     $scope.map = { center: { latitude: 54.080743, longitude: -2.482910 }, zoom: 6 };
     $scope.onClick = function(marker, eventName, model) {
-        console.log("Clicked!");
-        console.log(model);
+        // console.log("Clicked!");
+        // console.log(model);
         model.show = !model.show;
     };
 });

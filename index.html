@@ -33,23 +33,24 @@
             </md-button>
         </div>
     </md-toolbar>
-    <div layout="row" class="all">
+    <div layout="row" class="all nav">
         <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')">
             <md-button class="md-icon-button right" hide-gt-md aria-label="Show Menu">
                 <md-icon md-font-library="material-icons" ng-click="menuToggle()" aria-label="Close" class="icon-static">close</md-icon>
             </md-button>
             <div class="header">
                 <span flex></span>
-                <img ng-src="{{userIcon}}" class="sa-img" />
+                <!-- <img ng-src="{{userIcon}}" class="sa-img" /> -->
+                <img ng-src="images/white-small-logo.png" class="sa-img" />
                 <span flex></span>
             </div>
             <md-list>
                 <md-list-item ng-click="go('home','home');menuToggle();">
-                    <p style="font-size:18px;color:white;">HOME</p>
+                    <p>HOME</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item ng-repeat="item in menuItems" ng-click="go(item.path,item.name);menuToggle();">
-                    <p style="font-size:18px;color:white;">{{item.name | uppercase}}</p>
+                    <p>{{item.name | uppercase}}</p>
                 </md-list-item>
             </md-list>
         </md-sidenav>
