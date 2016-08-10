@@ -36,41 +36,41 @@
             }
         }
 
-        $scope.max = $scope.results.length -1;
-        console.log( $scope.results.length);
+        $scope.max = $scope.results.length - 1;
 
         $scope.selectedIndex = 0;
-        
+
+
         $scope.nextTab = function() {
-            console.log("next clicked");
+
             var index = ($scope.selectedIndex == $scope.max) ? 0 : $scope.selectedIndex + 1;
             $scope.selectedIndex = index;
-console.log($scope.selectedIndex);
+
         };
 
         $scope.prevTab = function() {
-            console.log("previous clicked");
+
             var index = ($scope.selectedIndex == $scope.max) ? 0 : $scope.selectedIndex - 1;
             $scope.selectedIndex = index;
 
-            console.log($scope.selectedIndex);
+
 
         };
 
         $scope.isSearching = false;
 
-        FlickrService.getAlbums.then(function(data){
+        FlickrService.getAlbums.then(function(data) {
             $scope.results = data;
             //console.log(data);
         });
 
-        FlickrService.getUserIcon.then(function(data){
+        FlickrService.getUserIcon.then(function(data) {
             var iconFarm = data.person.iconfarm,
                 iconServer = data.person.iconserver,
                 nsid = data.person.nsid;
             $scope.userIcon = "http://farm" + iconFarm + ".staticflickr.com/" + iconServer + "/buddyicons/" + nsid + "_l.jpg";
         });
 
-        
+
     }]);
 })();

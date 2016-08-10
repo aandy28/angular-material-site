@@ -1,7 +1,7 @@
 <md-dialog aria-label="Lightbox" class="lightbox">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2 ng-if="title" ng-bind="title"></h2>
+      
       <span flex></span>
       <md-button class="md-icon-button" ng-click="cancel()">
         <md-icon md-font-library="material-icons" aria-label="Close" class="icon-static">close</md-icon>
@@ -9,6 +9,9 @@
     </div>
   </md-toolbar>
   <md-dialog-content>
-      <img ng-src="{{image}}" alt="{{title}}">
+      <!-- <span class="md-raised md-primary prev scrollClick" ng-click="prevImage()" ng-show="{{index > 0}}"><i class="material-icons">keyboard_arrow_left</i></span>
+      <span class="md-raised md-primary next scrollClick" ng-click="nextImage()" ng-hide="{{index > 8}}"><i class="material-icons">keyboard_arrow_right</i></span>
+       --><img ng-src="{{image}}" alt="{{title}}">
+      
   </md-dialog-content>
 </md-dialog>

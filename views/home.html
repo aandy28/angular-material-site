@@ -17,13 +17,13 @@
                 <div flex class="homeCenterContent">
                     <h3 class="md-title">
                 <a class="link link--mallki" ui-sref="gallery({ photosetid: picture.id })">{{picture.title._content}}<span data-letters="{{picture.title._content}}"></span><span data-letters="{{picture.title._content}}"></span></a>
-                    <span class="md-raised md-primary prev scrollClick" ng-click="prevTab()" ng-show="{{$index > 0}}"><i class="material-icons">keyboard_arrow_left</i></span><span class="md-raised md-primary next scrollClick" ng-click="nextTab()" ng-hide="{{$index > 8}}"><i class="material-icons">keyboard_arrow_right</i></span>
+                    
                 </h3>
                 </div>
                 <div flex class="homeCenterContent">
                     <a ui-sref="gallery({ photosetid: picture.id })" class="pic" style="background-image:url(https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg);"><!-- <img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg" class="md-media-lg card-media"> -->
                     </a>
-                </div>
+                </div><span class="md-raised md-primary prev scrollClick" ng-click="prevTab()" ng-show="{{$index > 0}}"><i class="material-icons">keyboard_arrow_left</i></span><span class="md-raised md-primary next scrollClick" ng-click="nextTab()" ng-hide="{{$index > 8}}"><i class="material-icons">keyboard_arrow_right</i></span>
             </md-content>
         </md-tab>
     </md-tabs>
