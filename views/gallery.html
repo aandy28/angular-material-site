@@ -1,18 +1,28 @@
-<md-content class="main">
+<!-- <md-content class="main">
     <md-tabs md-border-bottom md-align-tabs="bottom" md-stretch-tabs="always" md-dynamic-height="false">
         <md-tab ng-repeat="s in allslides track by $index" label="{{$index}}">
             <md-content>
                 <img ng-src="{{ s.src }}" md-lightbox md-lightbox-title="{{s.title}}" alt="slide number {{ $index }}" index="{{ $index }}" />
             </md-content>
 
-            <!-- <md-tab-label>
-		      
-		      <img ng-src="{{ s.thumb }}" md-lightbox md-lightbox-title="{{s.title}}" alt="slide number {{ $index }}" index="{{ $index }}" />
-		    </md-tab-label>
+            <md-tab-label>
+              
+              <img ng-src="{{ s.thumb }}" md-lightbox md-lightbox-title="{{s.title}}" alt="slide number {{ $index }}" index="{{ $index }}" />
+            </md-tab-label>
             <md-tab-body>
                 <img ng-src="{{ s.src }}" md-lightbox md-lightbox-title="{{s.title}}" alt="slide number {{ $index }}" index="{{ $index }}" />
-            </md-tab-body> -->
+            </md-tab-body>
         </md-tab>
 
     </md-tabs>
+</md-content> -->
+<md-content class="">
+    <div class="app-content gallery">
+        <div layout="row" layout-sm="column" layout-wrap>
+            <md-card ng-repeat="s in allslides track by $index">
+                <!-- <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" /> -->
+                <img ng-src="{{ s.src }}" md-lightbox md-lightbox-title="{{s.title._content}}" alt="slide number {{ $index }}" />
+            </md-card>
+        </div>
+    </div>
 </md-content>

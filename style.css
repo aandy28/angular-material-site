@@ -170,16 +170,16 @@ md-card:nth-child(4n-7) {
 
 @media screen and (min-width: 769px) {
     md-card {
-        // width: calc((100vw - 441px) / 4);
-        // height: calc(((100vw - 640px) / 5.33 ) + 60px);
-        width: 100%;
-        height: auto;
+        width: calc((100vw - 501px) / 4);
+        height: calc(((100vw - 640px) / 5.33 ) + 60px);
+        // width: 100%;
+        // height: auto;
         padding: 0;
         margin: 10px 20px 10px 20px;
     }
     md-card:nth-child(4n-7) {
-        //width: calc(((100vw - 405px) / 2) + 20px);
-        width: 100%;
+        width: calc(((100vw - 405px) / 2) + 20px);
+        // width: 100%;
     }
 }
 
