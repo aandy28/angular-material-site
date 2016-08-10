@@ -2,7 +2,7 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog) {
     return {
         link: function($scope, elem, attrs) {
 
-            $scope.max = 300;
+            $scope.max = $scope.results.photoset.total - 1;
             
             $scope.selectedIndex = 0;
 
@@ -13,6 +13,7 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog) {
                 var title = attrs.mdLightboxTitle;
                 var index = attrs.mdIndex;
                 showLightboxModal(image, title, index);
+
 
             });
 
