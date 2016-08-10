@@ -36,6 +36,26 @@
             }
         }
 
+        $scope.max = $scope.results.length -1;
+        console.log( $scope.results.length);
+
+        $scope.selectedIndex = 0;
+        
+        $scope.nextTab = function() {
+            console.log("next clicked");
+            var index = ($scope.selectedIndex == $scope.max) ? 0 : $scope.selectedIndex + 1;
+            $scope.selectedIndex = index;
+console.log($scope.selectedIndex);
+        };
+
+        $scope.prevTab = function() {
+            console.log("previous clicked");
+            var index = ($scope.selectedIndex == $scope.max) ? 0 : $scope.selectedIndex - 1;
+            $scope.selectedIndex = index;
+
+            console.log($scope.selectedIndex);
+
+        };
 
         $scope.isSearching = false;
 
