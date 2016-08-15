@@ -8,9 +8,11 @@
         </div>
     </md-toolbar>
     <md-dialog-content>
+
         <md-tabs  md-dynamic-height md-border-bottom md-selected="newIndex">
             <md-tab ng-repeat="picture in lbSlides" label="{{$index}}" flex layout-fill>
                 <md-content  class="md-padding">
+
                     <img ng-src="{{ picture.src }}" index="{{ $index }}" />
                     <span class="md-raised md-primary prev scrollClick" ng-click="prevTab()"><i class="material-icons">keyboard_arrow_left</i></span><span class="md-raised md-primary next scrollClick" ng-click="nextTab()"><i class="material-icons">keyboard_arrow_right</i></span>
                 </md-content>
