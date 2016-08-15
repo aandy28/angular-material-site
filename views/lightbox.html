@@ -1,17 +1,20 @@
 <md-dialog aria-label="Lightbox" class="lightbox">
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      
-      <span flex></span>
-      <md-button class="md-icon-button" ng-click="cancel()">
-        <md-icon md-font-library="material-icons" aria-label="Close" class="icon-static">close</md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
-  <md-dialog-content>
-      <span class="md-raised md-primary prev scrollClick" ng-click="prevImage()" ng-show="{{index > 0}}"><i class="material-icons">keyboard_arrow_left</i></span>
-      <span class="md-raised md-primary next scrollClick" ng-click="nextImage()" ng-hide="{{index > 8}}"><i class="material-icons">keyboard_arrow_right</i></span>
-      <img ng-src="{{image}}" alt="{{title}}">
-      
-  </md-dialog-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-font-library="material-icons" aria-label="Close" class="icon-static">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-tabs  md-dynamic-height md-border-bottom md-selected="newIndex">
+            <md-tab ng-repeat="picture in lbSlides" label="{{$index}}" flex layout-fill>
+                <md-content  class="md-padding">
+                    <img ng-src="{{ picture.src }}" index="{{ $index }}" />
+                    <span class="md-raised md-primary prev scrollClick" ng-click="prevTab()"><i class="material-icons">keyboard_arrow_left</i></span><span class="md-raised md-primary next scrollClick" ng-click="nextTab()"><i class="material-icons">keyboard_arrow_right</i></span>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
 </md-dialog>

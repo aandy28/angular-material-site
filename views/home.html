@@ -1,15 +1,3 @@
-<!-- <md-content>
-    <div class="app-content home"> -->
-<!-- <div layout="row" layout-sm="column" layout-wrap>
-            <md-card ng-repeat="picture in results.photosets.photoset | orderBy:'date_update'" >
-                <a ui-sref="gallery({ photosetid: picture.id })"><img ng-src="https://farm{{picture.farm}}.static.flickr.com/{{picture.server}}/{{picture.primary}}_{{picture.secret}}_h.jpg" class="md-media-lg card-media">
-                </a>
-               <h3 class="md-title">
-                <a class="link link--mallki" ui-sref="gallery({ photosetid: picture.id })">{{picture.title._content}}<span data-letters="{{picture.title._content}}"></span><span data-letters="{{picture.title._content}}"></span></a>
-                    
-                </h3>
-            </md-card>
-        </div> -->
 <md-content class="home main">
     <md-tabs md-border-bottom md-align-tabs="bottom" md-dynamic-height="false" flex layout-fill md-selected="selectedIndex" >
         <md-tab ng-repeat="picture in results.photosets.photoset | orderBy:'date_update' track by $index" label="{{$index}}" flex  layout-fill>
@@ -28,5 +16,3 @@
         </md-tab>
     </md-tabs>
 </md-content>
-<!-- </div>
-</md-content> -->

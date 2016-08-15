@@ -425,7 +425,7 @@ md-sidenav md-list:after {
     margin-top: 1rem;
 }
 
-.home md-tabs-wrapper
+md-tabs-wrapper
 {
     display:none;
 }
