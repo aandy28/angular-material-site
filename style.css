@@ -206,6 +206,7 @@ md-card img {
 .lightbox {
     background-color: transparent;
     box-shadow: none;
+    max-height:100%;
 }
 
 .lightbox md-toolbar.md-default-theme:not(.md-menu-toolbar),
@@ -338,6 +339,11 @@ md-tabs img {
     border: 0;
 }
 
+.lightbox md-tabs img {
+    max-width:1000px;
+    max-height:700px;
+}
+
 md-tabs[md-border-bottom]:not(.md-dynamic-height) md-tabs-content-wrapper {
     top: 0;
 }
@@ -430,29 +436,29 @@ md-tabs-wrapper
     display:none;
 }
 
-.home .scrollClick
+.home .scrollClick, .lightbox .scrollClick
 {
     position:absolute;
     top:50%;
 }
 
-.home .scrollClick:hover
+.home .scrollClick:hover, .lightbox .scrollClick:hover
 {
     cursor: pointer;
 }
 
-.home .scrollClick i
+.home .scrollClick i, .lightbox .scrollClick i
 {
     font-size:100px;
     color:#f15a22;
 }
 
-.home .scrollClick.prev
+.home .scrollClick.prev, .lightbox .scrollClick.prev
 {
     left:0;
 }
 
-.home .scrollClick.next
+.home .scrollClick.next, .lightbox .scrollClick.next
 {
     right:0;
 }

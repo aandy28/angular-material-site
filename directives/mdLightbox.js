@@ -1,4 +1,4 @@
-app.directive('mdLightbox', ['$mdDialog', function($mdDialog) {
+app.directive('mdLightbox', ['$mdDialog', 'myutils', function($mdDialog, myutils) {
     return {
         link: function($scope, elem, attrs) {
 
@@ -13,6 +13,9 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog) {
                 var index = Number(attrs.mdIndex);
                 var allSlides = $scope.allslides;
                 var maxSlides = $scope.allslides.length - 1;
+
+                myutils.showWait();
+
                 showLightboxModal(image, title, allSlides, maxSlides, index);
 
 
@@ -26,9 +29,15 @@ app.directive('mdLightbox', ['$mdDialog', function($mdDialog) {
                     controller: lightboxController
                 });
                 console.log(allSlides);
-                $mdDialog.show(confirm);
+                myutils.hideWait();
+
+                setTimeout(function(){
+                   $mdDialog.show(confirm);
+                },5);
+                
 
                 function lightboxController($scope, $mdDialog) {
+                    
                     $scope.image = image;
                     $scope.title = title;
                     $scope.newIndex= index;

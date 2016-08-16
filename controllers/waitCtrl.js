@@ -4,9 +4,6 @@
 
     function waitCtrl($mdDialog, $rootScope) {
         var vm = this;
-
-       
-        
       $rootScope.$on("hide_wait", function (event, args) {
             $mdDialog.cancel();
         }); 
