@@ -21,7 +21,7 @@
         <div layout="row" layout-sm="column" layout-wrap>
             <md-card ng-repeat="s in allslides">
                 <!-- <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" /> -->
-                <img ng-src="{{ s.src }}" md-lightbox md-lightbox-title="{{s.title._content}}" alt="slide number {{ $index }}" md-index="{{ $index }}" />
+                <img lazy-src="{{s.src}}" animate-visible="true" animate-speed="0.5s" md-lightbox md-lightbox-title="{{s.title._content}}" alt="slide number {{ $index }}" md-index="{{ $index }}" />
             </md-card>
         </div>
     </div>

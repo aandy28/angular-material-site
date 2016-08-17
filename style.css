@@ -181,6 +181,7 @@ md-card:nth-child(4n-7) {
         width: calc(((100vw - 405px) / 2) + 20px);
         // width: 100%;
     }
+
 }
 
 md-card img {
@@ -188,11 +189,6 @@ md-card img {
     width: 100%;
     object-fit: cover;
     border: 0;
-}
-
-md-card img {
-    max-height: 300px !important;
-    min-height: 300px;
 }
 
 .home md-card {

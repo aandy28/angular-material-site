@@ -33,8 +33,8 @@
             </md-button>
         </div>
     </md-toolbar>
-    <div layout="row" class="all nav">
-        <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')">
+    <div layout="row" class="all ">
+        <md-sidenav md-component-id="left" class="md-sidenav-left nav" md-is-locked-open="$mdMedia('gt-md')">
             <md-button class="md-icon-button right" hide-gt-md aria-label="Show Menu">
                 <md-icon md-font-library="material-icons" ng-click="menuToggle()" aria-label="Close" class="icon-static">close</md-icon>
             </md-button>
@@ -84,6 +84,7 @@
     <script src="controllers/waitCtrl.js"></script>
     <!-- Load directives -->
     <script src="directives/mdLightbox.js"></script>
+    <script src="directives/me-lazyload.js"></script>
 </body>
 
 </html>
