@@ -337,7 +337,7 @@ md-tabs img {
 
 .lightbox md-tabs img {
     max-width:1000px;
-    max-height:700px;
+    max-height:500px;
 }
 
 md-tabs[md-border-bottom]:not(.md-dynamic-height) md-tabs-content-wrapper {
